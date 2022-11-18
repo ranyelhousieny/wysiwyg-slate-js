@@ -23,6 +23,7 @@
     "slate": "^0.85.0",
     "slate-history": "^0.85.0",
     "slate-react": "^0.83.2",
+    "slate-tables": "^0.9.0",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },

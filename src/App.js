@@ -23,6 +23,12 @@ import {
 import isHotkey from 'is-hotkey';
 import { Button } from 'react-bootstrap';
 import useSelection from './hooks/useSelection';
+import Tables from 'slate-tables';
+const plugins = [
+  Tables({
+    /* options object here; see below */
+  }),
+];
 
 const HOTKEYS = {
   'mod+b': 'bold',
@@ -206,7 +212,6 @@ const App = () => {
     format,
     icon,
   }) => {
-    debugger;
     const editor = useSlate();
     return (
       <Button
@@ -222,7 +227,9 @@ const App = () => {
             editor,
             format
           );
-        }}></Button>
+        }}>
+        {format}
+      </Button>
     );
   };
 
@@ -234,10 +241,7 @@ const App = () => {
         onChange={
           onChangeHandler
         }>
-        <Button>
-          Bold
-          <MarkButton format='bold' />
-        </Button>
+        <MarkButton format='bold' />
 
         <Editable
           renderElement={
